@@ -19,6 +19,7 @@ public class Ex2 {
 		y = sc.nextInt();
 
 		a = x/y;
+		b = x%y;
 		
 		
 		
@@ -27,7 +28,7 @@ public class Ex2 {
 		System.out.println("Dividendo:" + x);
 		System.out.println("Divisor:" + y);
 		System.out.println("Quociente:" + a);
-		System.out.println("Resto:" );
+		System.out.println("Resto:" + b);
 
 		sc.close();
 	}
