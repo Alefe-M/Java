@@ -11,8 +11,8 @@ public class Ex14 {
 
 		boolean notaValida;
 		int reprovado = 0, aprovado = 0, exame = 0, alunos = 0;
-		double nota1 = 0, nota2 = 0, mediaClasse = 0, media = 0;
-		String resposta, nome;
+		double nota1 = 0, nota2 = 0, mediaClasse = 0, media = 0, maiorMedia = 0, menorMedia = 10;
+		String resposta, nome, melhorAluno = "", piorAluno = "";
 
 		do {
 			alunos++;
@@ -50,18 +50,27 @@ public class Ex14 {
 				aprovado++;
 			}
 
+			if (maiorMedia < media) {
+				maiorMedia = media;
+				melhorAluno = nome;
+			} else if (menorMedia > media) {
+				menorMedia = media;
+				piorAluno = nome;
+			}
+			mediaClasse = (mediaClasse + media) / alunos;
+
+			System.out.println("O total de alunos: " + alunos);
+			System.out.println("Alunos Aprovados: " + aprovado);
+			System.out.println("Alunos Exame: " + exame);
+			System.out.println("Alunos Reprovados: " + reprovado);
+			System.out.println("Media das notas da classe: " + mediaClasse);
+			System.out.println("O melhor aluno foi " + melhorAluno + " com a media de " + maiorMedia);
+			System.out.println("O pior aluno foi " + piorAluno + " com a media de " + menorMedia);
 			System.out.println("Deseja continuar? (s/n)");
+			sc.nextLine();
 			resposta = sc.nextLine();
 
 		} while (resposta.equals("s"));
-
-		mediaClasse = mediaClasse + media;
-
-		System.out.println("O total de alunos: " + alunos);
-		System.out.println("Alunos Aprovados: " + aprovado);
-		System.out.println("Alunos Exame: " + exame);
-		System.out.println("Alunos Reprovados: " + reprovado);
-		System.out.println("Media das notas da classe: " + mediaClasse);
 
 		sc.close();
 	}
